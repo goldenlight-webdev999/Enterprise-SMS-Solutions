@@ -1,0 +1,159 @@
+<%- content_for :custom_css, 'sms_api' %>
+<section>
+  <div class="rivet-title">
+    <div class="container">
+      <h3>24/7 Tech Support</h3>
+      <h1>SMS API Build for Developers</h1>
+      <h2>Easy, Secure and Reliable SMS API</h2>
+      <p>Enables you to connect with the customers worldwide</p>
+      <div>
+        <button id="talk-to-an-expert-sms-api">Talk to an Expert</button>
+        <%= link_to  contact_path do%>
+          <button>Contact Us</button>
+        <%end%>
+      </div>
+    </div>
+  </div>
+  <%= render 'layouts/receive_callback' %>
+  <div class="sms-api-service">
+    <div class="container">
+      <h1>SMS API Service</h1>
+      <p>We made it simple yet trusted and most reliable integration for developer-friendly global SMS API into your communications platform. It is to send SMS text messages to your customers fast and easily. Get up and running quickly with clear documentation, developer tools, and comprehensive reporting.
+      </p>
+      <%= form_tag get_api_doc_path, method: 'get' do %>
+        <div class="download">
+          <div class="input-field">
+            <input type="email" name="email" placeholder=" "  required maxlength="45"/>
+
+              <label for="input-text-field">
+                <span class="first-letter">Please enter your work email</span><span class="second-letter">*</span>
+              </label>
+          </div>
+          <button><%= image_pack_tag "download_black_24dp.svg" %>Download API</button>
+
+        </div>
+      <%end%>
+    </div>
+  </div>
+  <div class="article">
+    <div class="reach-engage">
+      <div class="container">
+        <div class="article-img">
+          <%= image_pack_tag "illustration1.svg", alt: "" %>
+        </div>
+        <div class="article-text">
+          <h1>Reach and Engage More Customers</h1>
+          <p>
+            95% of SMS messages are read within 3 minutes. Interact with your values potential customers with engaging and relevant sms messages. We Rivet provide authentic and trusted sms channels to ensure your all sms delivered on time always. We don't compromise on quality networks. Rivets SMS API makes it easy to implement SMS across your entire enterprise.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="notification-alert">
+      <div class="container">
+        <div class="article-text">
+          <h1>Notifications and SMS Alerts</h1>
+          <p>Send transactional sms messages in time to your customers like share purchase receipt information, money transfer receipts, over due bill notifications, pay rental alert, installment due. Protect your customer data with 2 factor authentication notifications.</p>
+        </div>
+        <div class="article-img">
+          <%= image_pack_tag "illustration2.svg", alt: "" %>
+
+        </div>
+      </div>
+    </div>
+    <div class="improve-experience">
+      <div class="container">
+        <div class="article-img">
+          <%= image_pack_tag "illustration3.svg", alt: "" %>
+        </div> 
+        <div class="article-text">
+          <h1>Improve Customer Experiences</h1>
+          <p>Rivet SMS API allows to send instantly to all 750+ direct carriers/operators. Unparalleled global delivery of your brand communications, notifications, and critical customer alerts.</p>
+        </div>
+      </div>
+    </div>
+    <div class="operational-costs">
+      <div class="container">
+        <div class="article-text">
+          <h1>Lower Operational Costs</h1>
+          <p>We have lifted all burden of messaging with 24/7 support. Brands that use SMS messages to communicate with customers can experience up to a 20% decrease in support calls and a 25% increase in customer satisfaction. Incorporate text messaging into your call center, deliver instant offers, and invite real-time feedback with an SMS API designed for your enterprise needs.</p>
+        </div>
+        <div class="article-img">
+          <%= image_pack_tag "illustration4.svg", alt: "" %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="salient-features">
+    <div class="container">
+      <h1>Salient Features</h1>
+      <div class="salient-features-item-content">
+        <div class="salient-features-item">
+          <div class="salient-features-item-img">
+            <%= image_pack_tag "premium.svg", alt: "" %>
+          </div>
+          <div class="salient-features-item-text">
+            <h2>Premium Quality</h2>
+            <p>Enjoy the premium quality of our dynamic, flexible SMS API Gateway that guarantee the accuracy and instant delivery of your OTP SMS, Transactions SMS text to any destination mobile in the world.</p>
+          </div>
+        </div>
+        <div class="salient-features-item">
+          <div class="salient-features-item-img">
+
+            <%= image_pack_tag "availability.svg", alt: "" %>
+
+          </div>
+          <div class="salient-features-item-text">
+            <h2>High Availability and Scalability</h2>
+            <p>Expand your reach to customers with our proprietary SMS API Gateway Server that seamlessly integrates with your systems and supports multiple interfaces, with minimal programming effort.</p>
+          </div>
+        </div>
+        <div class="salient-features-item">
+          <div class="salient-features-item-img">
+            <%= image_pack_tag "best-price.svg", alt: "" %>
+          </div>
+          <div class="salient-features-item-text">
+            <h2>Fair Pricing</h2>
+            <p>Pay only for what you need and get the best value for your money, with our specific routes that consider your business needs and the urgency level of your messages. What get you here Won't get you there!</p>
+          </div>
+        </div>
+        <div class="salient-features-item">
+          <div class="salient-features-item-img">
+            <%= image_pack_tag "globalization.svg", alt: "" %>
+          </div>
+          <div class="salient-features-item-text">
+            <h2>Global Reach with Local Support</h2>
+            <p>Get immediate coverage to billions of customers around the globe through our 700+ global carrier connections and 85+ networks within the Middle East and Africa.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="why-sms-content">
+    <div class="why-sms">
+      <div class="container">
+        <h1>Why SMS?</h1>
+        <p>The sms messaging empowers you to have better customer acquisition, retention of old customers, rapid increase in sales and revenues. You can send sms messges to increase the loyalty and reduce the cost of marketing. Get connected with SMS API platform Now to better engage your customers. We offer state of an art platform with instant message delivery anywhere, any time.</p>
+        <div class="why-sms-item-content">
+          <div class="why-sms-item">
+            <%= image_pack_tag "verification.svg", alt: "" %>
+            <h2>Account Verification</h2>
+            <p>Send codes via SMS to verify phone numbers</p>
+          </div>
+          <div class="why-sms-item">
+            <%= image_pack_tag "deal.svg", alt: "" %>
+            <h2>Engage Customers</h2>
+            <p>Share product updates, enhanced features, and drive downloads with SMS</p>
+          </div>
+          <div class="why-sms-item">
+            <%= image_pack_tag "sms.svg", alt: "" %>
+            <h2>User Notifications</h2>
+            <p>Send important alerts, reminders, confirm orders and more, all via SMS</p>
+          </div>
+        </div>
+      </div>
+      <%= render 'layouts/project_help' %>
+      <%= image_pack_tag "message_illustration.svg", alt: "" %>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,148 @@
+<div class="receive-callbackbar">
+  <div class="container">
+    <div class="callbackbar-text">
+      <h1>Receive a Call-Back</h1>
+      <p>Let our team help you cater your technical requirements</p>
+    </div>
+    <form action='https://crm.zoho.com/crm/WebToLeadForm' name=WebToLeads3223156000023303006 method='POST' onSubmit='javascript:document.charset="UTF-8"; return checkMandatory3223156000023303006()' accept-charset='UTF-8'>
+      <input type='text' style='display:none;' name='xnQsjsdp' value='37d67501f9f2d3e2599a3c486b2d4fcf82af4b84ca411dd67d2946265f93ca56'></input> 
+      <input type='hidden' name='zc_gad' id='zc_gad' value=''></input> 
+      <input type='text' style='display:none;' name='xmIwtLD' value='c382a0bc766c2f05d6824369c1f5eadd671a847c4e34170c55c94a6c80476b7f'></input> 
+      <input type='text'  style='display:none;' name='actionType' value='TGVhZHM='></input>
+      <input type='text' style='display:none;' name='returnURL' value='http&#x3a;&#x2f;&#x2f;dev.rivet.solutions' > </input>
+      <!-- Do not remove this code. -->
+      <input type='text' style='display:none;' id='ldeskuid' name='ldeskuid'></input>
+      <input type='text' style='display:none;' id='LDTuvid' name='LDTuvid'></input>
+      <!-- Do not remove this code. -->
+      <div class="callbackbar-form">
+        <div class="inputbar">
+          <label>Name<span>*</span></label>
+          <input type="text" id='Last_Name' name='Last Name' placeholder="Enter your full name" required maxlength="45" />
+        </div>
+        <div class="inputbar">
+          <label>Work Email<span>*</span></label>
+          <input type="text" id='Email' name='Email' placeholder="Enter your work email" required maxlength="45" />
+        </div>
+        <div class="inputbar">
+          <label>Phone Number<span>*</span></label>
+          <input type="text" id='Phone' name='Phone' placeholder="Enter your phone number"  required maxlength="16" />
+        </div>
+        <div style="display: none;">
+          <select class='zcwf_col_fld_slt' id='Lead_Source' name='Lead Source'  >
+            <option value='-None-'>-None-</option>
+            <option value='Facebook&#x20;Ads'>Facebook Ads</option>
+            <option selected value='Web-form'>Web-form</option>
+            <option value='Facebook'>Facebook</option>
+            <option value='Chat'>Chat</option>
+            <option value='WhatsApp'>WhatsApp</option>
+            <option value='Google&#x20;AdWords'>Google AdWords</option>
+            <option value='Linkedin'>Linkedin</option>
+            <option value='Employee&#x20;Referral'>Employee Referral</option>
+            <option value='Trade&#x20;Show'>Trade Show</option>
+            <option value='Seminar&#x20;Partner'>Seminar Partner</option>
+            <option value='Online&#x20;Store'>Online Store</option>
+            <option value='Partner'>Partner</option>
+            <option value='External&#x20;Referral'>External Referral</option>
+            <option value='Web&#x20;Download'>Web Download</option>
+            <option value='Internal&#x20;Seminar'>Internal Seminar</option>
+            <option value='Advertisement'>Advertisement</option>
+            <option value='Web&#x20;Research'>Web Research</option>
+            <option value='Cold&#x20;Call'>Cold Call</option>
+            <option value='Sales&#x20;Email&#x20;Alias'>Sales Email Alias</option>
+            <option value='Public&#x20;Relations'>Public Relations</option>
+            <option value='Twitter'>Twitter</option>
+          </select>
+        </div>
+        <div class="requestbutton">
+          <button type="submit">Send Request</button>
+        </div>
+      </div>
+      <script>
+        function validateEmail3223156000023303006()
+        {
+          var form = document.forms['WebToLeads3223156000023303006'];
+          var emailFld = form.querySelectorAll('[ftype=email]');
+          var i;
+          for (i = 0; i < emailFld.length; i++)
+          {
+            var emailVal = emailFld[i].value;
+            if((emailVal.replace(/^\s+|\s+$/g, '')).length!=0 )
+            {
+              var atpos=emailVal.indexOf('@');
+              var dotpos=emailVal.lastIndexOf('.');
+              if (atpos<1 || dotpos<atpos+2 || dotpos+2>=emailVal.length)
+              {
+                alert('Please enter a valid email address. ');
+                emailFld[i].focus();
+                return false;
+              }
+            }
+          }
+          return true;
+        }
+
+           function checkMandatory3223156000023303006() {
+          var mndFileds = new Array('Last Name','Email','Phone');
+          var fldLangVal = new Array('Last\x20Name','Email','Phone');
+          for(i=0;i<mndFileds.length;i++) {
+            var fieldObj=document.forms['WebToLeads3223156000023303006'][mndFileds[i]];
+            if(fieldObj) {
+            if (((fieldObj.value).replace(/^\s+|\s+$/g, '')).length==0) {
+             if(fieldObj.type =='file')
+              { 
+               alert('Please select a file to upload.'); 
+               fieldObj.focus(); 
+               return false;
+              } 
+            alert(fldLangVal[i] +' cannot be empty.'); 
+                      fieldObj.focus();
+                      return false;
+            }  else if(fieldObj.nodeName=='SELECT') {
+                     if(fieldObj.options[fieldObj.selectedIndex].value=='-None-') {
+              alert(fldLangVal[i] +' cannot be none.'); 
+              fieldObj.focus();
+              return false;
+               }
+            } else if(fieldObj.type =='checkbox'){
+                if(fieldObj.checked == false){
+              alert('Please accept  '+fldLangVal[i]);
+              fieldObj.focus();
+              return false;
+               } 
+             } 
+             try {
+                 if(fieldObj.name == 'Last Name') {
+              name = fieldObj.value;
+                   }
+            } catch (e) {}
+              }
+          }
+          trackVisitor();
+          if(!validateEmail3223156000023303006()){return false;}
+          document.querySelector('.crmWebToEntityForm .formsubmit').setAttribute('disabled', true);
+        }
+
+        function tooltipShow3223156000023303006(el){
+          var tooltip = el.nextElementSibling;
+          var tooltipDisplay = tooltip.style.display;
+          if(tooltipDisplay == 'none'){
+            var allTooltip = document.getElementsByClassName('zcwf_tooltip_over');
+            for(i=0; i<allTooltip.length; i++){
+              allTooltip[i].style.display='none';
+            }
+            tooltip.style.display = 'block';
+          }else{
+            tooltip.style.display='none';
+          }
+        }
+      </script>
+      <script type='text/javascript' id='VisitorTracking'>var $zoho= $zoho || {};$zoho.salesiq = $zoho.salesiq || {widgetcode:'2f394e5aac867e18050b83072b78588a080c2695fc939ccd6ee87beb105d7aeb', values:{},ready:function(){}};var d=document;s=d.createElement('script');s.type='text/javascript';s.id='zsiqscript';s.defer=true;s.src='https://salesiq.zoho.com/widget';t=d.getElementsByTagName('script')[0];t.parentNode.insertBefore(s,t);function trackVisitor(){try{if($zoho){var LDTuvidObj = document.forms['WebToLeads3223156000023303006']['LDTuvid'];if(LDTuvidObj){LDTuvidObj.value = $zoho.salesiq.visitor.uniqueid();}var firstnameObj = document.forms['WebToLeads3223156000023303006']['First Name'];if(firstnameObj){name = firstnameObj.value +' '+name;}$zoho.salesiq.visitor.name(name);var emailObj = document.forms['WebToLeads3223156000023303006']['Email'];if(emailObj){email = emailObj.value;$zoho.salesiq.visitor.email(email);}}} catch(e){}}
+      </script>
+      <!-- Do not remove this --- Analytics Tracking code starts -->
+      <script id='wf_anal' src='https://crm.zohopublic.com/crm/WebFormAnalyticsServeServlet?rid=c382a0bc766c2f05d6824369c1f5eadd671a847c4e34170c55c94a6c80476b7fgid37d67501f9f2d3e2599a3c486b2d4fcf82af4b84ca411dd67d2946265f93ca56gid885e3c1045bd9bdcc91bdf30f82b5696gid14f4ec16431e0686150daa43f3210513'>
+        
+      </script>
+      <!-- Do not remove this --- Analytics Tracking code ends. -->
+    </form>
+  </div>
+</div>

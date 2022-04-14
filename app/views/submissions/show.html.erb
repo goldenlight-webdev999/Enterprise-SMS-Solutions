@@ -1,0 +1,56 @@
+<%- content_for :custom_css, 'pricing' %>
+
+<section>
+  <div class="card text-center mx-auto" style="width: 30rem;">
+  <div class="rivet-title">
+    <div class="container">
+        <p> Your payment was successful. Thank you!</p>
+    </div>
+      <div class="container">
+        <div class="alert alert-info" role="alert">
+          <!-- <section id="content-receipt" class="clearfix"> -->
+                <div id="receipt-container">
+                  <p><strong>PAYMENT RECEIPT</strong></p>
+                  <div class="dotmatrix left"></div>
+                  <div id="receipt-content">
+                    <!-- <h4 id="receipt-title">Rivet WABA payment!</h4> -->
+                    <div id="receipt-details" class="row clearfix">
+                      <div class="col-sm-16">
+                        <p><strong class="font-weight-heavy"><%= @submission.title %></strong><br/> 
+                        <span class="font-weight-light">Payment Amount:USD <%= @submission.price/100 %></span></p>
+                      </div><br/>
+                      <div class="font-weight-light"><strong>Payment Status:
+                       <%= @submission.status %></strong>
+                      </div><br/><br/>
+                      <div class="font-weight-light"><strong>Reference Number:
+                       <%= @submission.stripe_payment_id %><strong>
+                      </div><br/>
+                      <div class="font-weight-light"><strong>Payment Date:
+                       <%= @submission.created_at %><strong>
+                      </div><br/>
+                    </div>
+                    
+                    <% if user_signed_in? %>
+                      <%= link_to  whatsapp_api_path class: 'button' do%>
+                        <button>CLOSE</button>
+                      <%end%>
+                    <% else %>
+                      <%= link_to  whatsapp_page_path class: 'button' do%>
+                        <button>CLOSE</button>
+                      <%end%>
+                    <% end %>
+                    
+                    <footer id="receipt-footer">
+                      <small>Your purchase is complete. We hope you enjoy it!</small>
+                    </footer>
+                  </div>
+                  <div class="dotmatrix right"></div>
+                </div>
+                <div id="receipt-shadow"></div>
+          <!-- </section> -->
+        </div>
+      </div>
+  </div>
+</div>
+  
+</section>

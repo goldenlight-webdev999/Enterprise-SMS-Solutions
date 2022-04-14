@@ -1,0 +1,90 @@
+<%- content_for :custom_css, 'two_way_sms' %>
+<section>
+  <div class="rivet-title">
+    <div class="container">
+      <h1>WhatsApp Business API</h1></br>
+      <h2>Enables business to communicate with thier Customers Through Quick Feedbacks and interactive responses.</h2></br>
+      <p>WhatsApp Business API solution gives flexibility in client and business connection.</p>
+       <!-- <button onclick="location.href='./users/sign_in'">Register & Get Started</button> -->
+
+       <div>
+        <button id="talk-to-an-expert-sms-api">Talk to an Expert</button>
+        <%= link_to  contact_path do%>
+          <button>Contact Us</button>
+        <%end%>
+      </div>
+  
+    </div>
+  </div>
+      <div class="engage">
+        <div class="container">
+          <h1>WhatsApp Business API powers to communicate with customers all over the world!</h1>
+          <div class="engage-item-content">
+            <div class="engage-item">
+              <%= image_pack_tag 'calendar.svg'%>
+              <h2>Easiest, most convenient way</h2>
+              <p>Currently the WhatsApp users worldwide is over 2 billion and increasing.</p>
+            </div>
+            <div class="engage-item">
+              <%= image_pack_tag 'two_way.jpg'%>
+              <h2>Two-sided conversations</h2>
+              <p>WhatsApp delivers quality, reliable two-way messaging between the businesses and customers around the globe.</p>
+            </div>
+            <div class="engage-item">
+              <%= image_pack_tag 'security.jpg'%>
+              <h2>End-to-end encryption and data privacy</h2>
+              <p>Messages  that are sent using whatsapp API are end-to-end encrypted, which means WhatsApp or any other third-party can’t access them.</p>
+            </div>
+          </div>
+          <div class="engage-item-content">
+            <div class="engage-item">
+              <%= image_pack_tag 'multimedia.jpg'%>
+              <h2>Automation & Multimedia</h2>
+              <p>Customer service with simple automation and chatbots.Images, videos, audio, or documents for more interactive response.</p>
+            </div>
+            <div class="engage-item">
+              <%= image_pack_tag 'handshake.svg'%>
+              <h2>Official Business Account</h2>
+              <p>Official, verified Business Account.Your number is Officaly Authorised by WhatsApp.</p>
+            </div>
+            <div class="engage-item">
+              <%= image_pack_tag 'subscription.svg'%>
+              <h2>Notifications & Alerts</h2>
+              <p>Send your customers important information or changes directly to their mobile device in real time using template messages.</p>
+            </div>
+          </div>
+        
+      <!-- <button onclick="location.href='./submissions/new'">WABA SetUp Payment</button><br>
+      <button onclick="location.href='./subscriptions/new'">Get Started & Subscribe</button>
+      <form action="/cancel_subscriptions" method="post">
+          <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+          <button type="submit" value="Unsubscribe">Cancel subscription</button>
+      </form> -->
+    </div>
+  </div>
+  <div class="rivet-title-wa">
+    <div class="container">
+      <h1>Rivet Solution for WhatsApp business API</h1></br>
+      <h2>Multi-Agent support</h2></br>
+      <p>An approach orchestrating well-established conversational assistants. Work as a team where employees work in defined roles as well as efficiently together in problem solving.</p></br>
+      <h2>AI chatbots</h2></br>
+      <p>Respond to customers in more efficient way and pre-defined answers.</p></br>
+      <h2>Develop efficient Chatbot </h2></br>
+      <p>Create Chatbots to support your customer service – without any programming background knowledge.</p></br>
+      <h2>All-in -one Solution for communication</h2></br>
+      <p>Manage customer messages centrally on our Chatbot platform and provide customer service through messaging apps</br> - WhatsApp </br>
+      - Facebook Messenger </br>
+      - Integrating with website and ..</p>
+    </div>
+  </div>
+  <%= render 'layouts/receive_callback'%>
+  
+  <div class="connect">
+    <div class="container">
+      <h1>We Connect You To The World</h1>
+      <p>
+        With direct connection to 200 global telecom partners that connect to 65% of the world's mobile devices, we successfully deliver over 100 bullion messages a year. Connect worldwide with single interface and enjoy all the benefits of an industry-leading platform.
+      </p>
+    </div>
+  </div>
+</section>

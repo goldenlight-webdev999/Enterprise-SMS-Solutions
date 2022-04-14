@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Enterprise Sms Solution</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous"/>
+    <%= stylesheet_pack_tag 'stylesheets', "#{yield (:custom_css)}", media: 'all', 'data-turbolinks-track': 'reload' %>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- ghhhfgg -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script> -->
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <script src="https://js.stripe.com/v3/"></script>
+
+  </head>
+
+  <body>
+    <%= render 'layouts/header'%>
+    <%= render 'layouts/nav_bar'%>
+
+    
+      <% if notice %>
+        <p class="alert alert-success"><%= notice %></p>
+      <% end %>
+      <% if alert %>
+        <p class="alert alert-danger"><%= alert %></p>
+      <% end %>
+        
+
+    <%= yield %>
+    <%= render 'layouts/footer'%>
+    <%= render 'layouts/salesiq'%>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js"></script>
+
+    <!-- <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="floating-wpp.min.js"></script>
+    <link rel="stylesheet" href="floating-wpp.min.css"> -->
+
+    <!-- Whatsapp integration  -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script> -->
+    
+    <!--Floating WhatsApp css-->
+    <link rel="stylesheet" href="https://rawcdn.githack.com/rafaelbotazini/floating-whatsapp/3d18b26d5c7d430a1ab0b664f8ca6b69014aed68/floating-wpp.min.css">
+    <!--Floating WhatsApp javascript-->
+    <script type="text/javascript" src="https://rawcdn.githack.com/rafaelbotazini/floating-whatsapp/3d18b26d5c7d430a1ab0b664f8ca6b69014aed68/floating-wpp.min.js"></script>
+
+    <!-- <script type="text/javascript">
+      let pos = {left: 0, x: 0};
+      $(document).ready(function(){
+        $(document).scroll(function() {
+          if ($(window).scrollTop() > 0) {
+            $("nav ul li a").css({'color': 'blue'})  
+            $(".nav-button button").css({'color': 'blue'})  
+          } else {
+            $("nav ul li a").css({'color': 'black'})  
+            $(".nav-button button").css({'color': 'black'})  
+          }
+        });
+          $(".navbar-toggle").click(function(){
+            $("#navlist").toggle();
+          });
+          $(".fonttype").mousedown(function(e) {
+
+            this.style.cursor = 'grabbing';
+            this.style.userSelect = 'none';
+            pos = {
+                left: this.scrollLeft,
+                x: e.clientX,
+            };
+            $(this).mousemove(function(e) {
+              const dx = e.clientX - pos.x;
+              this.scrollLeft = pos.left - dx;  
+            })
+          });
+          $(".fonttype").mouseup(function(e) {
+            this.style.cursor = 'grab';
+            this.style.removeProperty('user-select');
+          })
+          $(".logo").click(function() {
+            document.documentElement.scrollTop = 0;
+          })
+      });
+    </script> -->
+
+    <script type="text/javascript">
+      jQuery(document).ready(function(){
+        jQuery(".navbar-toggle").click(function(){
+          jQuery("#navlist").toggle();
+        });
+      });
+    </script>
+    
+    <script type="text/javascript">
+      $('#home-salesiq-button').click(function(){
+        $zoho.salesiq.floatwindow.visible('show');
+      });
+      $('#talk-to-an-expert-sms-api').click(function(){
+        $zoho.salesiq.floatwindow.visible('show');
+      });
+    </script>
+    
+    <!--  <a href="https://wa.me/90000000text=Congratulations You're a Genius" title="click to open whatsapp chat"><button class="btn btn-success">
+   <i class="fa fa-whatsapp"></i> Chat Now
+   </button></a>   -->
+
+   <div id="myDiv"></div>
+
+  </body>
+
+  <script type="text/javascript">
+  $(function () {
+    $('#myDiv').floatingWhatsApp({
+      phone: '971551088651',
+      headerTitle: 'Chat with us on WhatsApp!',
+      popupMessage: 'Hello, how can we help you?',
+      showPopup: true,
+      buttonImage: '<img src="https://rawcdn.githack.com/rafaelbotazini/floating-whatsapp/3d18b26d5c7d430a1ab0b664f8ca6b69014aed68/whatsapp.svg" />'
+    });
+  });
+  </script>
+</html>

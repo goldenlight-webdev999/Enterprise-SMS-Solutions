@@ -1,0 +1,852 @@
+<%- content_for :custom_css, 'pricing' %>
+<section>
+  <div class="rivet-title">
+    <div class="container">
+      <div class="rivet-title-text">
+        <h1>Test Drive</h1>
+        <h2>Our State-Of-The-Art Secure SMS Gateway Rest API</h2>
+        <p>With an open rate of 98%, SMS is the most direct and effective way to connect with your customers and clients.</p>
+        <div class="buynowbuttonbar">
+          <div class="container">
+            <%= link_to 'https://smpplive.com/', target: '_blank' do %>
+              <button class="desktop-button">Buy now</button>
+            <%end%>
+            <%= link_to 'https://smpplive.com/', target: '_blank' do %>
+              <button class="mobile-button">Get Started for Free</button>
+            <%end%>
+          </div>
+        </div>
+        <!-- <button onclick="location.href='./credit_amount.html'">Buy Now</button> -->
+      </div>
+      <div class="rivet-title-img">
+        <%= image_pack_tag "PricingGraphic.svg" %>
+      </div>
+    </div>
+  </div>
+  <%= render 'layouts/receive_callback'%>
+  <div class="pricing-option">
+    <div class="container">
+      <h1>Simple, Flexible pricing options</h1>
+      <div class="d-flex justify-content-around">
+        <div class="pricing-option-item">
+          <div class="optionimg">
+            <%= image_pack_tag "pay.svg" %>
+          </div>
+          <h6>Pay-as-you-go</h6>
+          <p>Simple usage-based pricing means you don't get locked into big contracts</p>
+        </div>
+        <div class="pricing-option-item">
+          <div class="optionimg">
+            <%= image_pack_tag "Volume_discounts.svg" %>
+          </div>
+          <h6>Volume Discounts</h6>
+          <p>Discounts trigger as your usage grows, so you can always get a fair price</p>
+        </div>
+        <div class="pricing-option-item">
+          <div class="optionimg">
+            <%= image_pack_tag "Committed_discount.svg" %>
+          </div>
+          <h6>Committed-use Discounts</h6>
+          <p>Talk with our sales team for access to deeper discounts when you commit to usage</p>
+        </div>
+
+      </div>
+    </div>
+  </div>  
+  <div class="buynowbuttonbar">
+    <div class="container">
+      <p>Start Building Today With Free Trial Credit And Full API Access</p>
+      <%= link_to 'https://smpplive.com/', target: '_blank' do %>
+        <button class="desktop-button">Buy now</button>
+      <%end%>
+      <%= link_to 'https://smpplive.com/', target: '_blank' do %>
+        <button class="mobile-button">Get Started for Free</button>
+      <%end%>
+    </div>
+  </div>
+
+  <!-- <div class="sms-api-service">
+      <div class="container">
+        <h1>SMS pricing </h1>
+        <p>SMS pricing is based on the destination and type of message you’re sending. Our pay-as-you-go pricing gives you a fair price no matter what you build.
+        </p>
+        <%= form_tag get_api_doc_path, method: 'get' do %>
+          <div class="download">
+            
+            <button><%= image_pack_tag "download_black_24dp.svg" %>Download pricing list</button>
+
+          </div>
+        <%end%>
+      </div>
+    </div> -->
+
+  <div class="table-controlbar">
+    <div class="container d-flex align-items-end justify-content-between">
+      <div class="country-select">
+        <label>View by</label>
+        <div class="select-arrow">&#10094;</div>
+        <select>
+          <option>Country</option>
+        </select>
+      </div>
+      <div class="sort-select">
+        <label>Sort by</label>
+        <div class="select-arrow">&#10094;</div>
+        <select>
+          <option>Name (A-Z)</option>
+          <option>Name (Z-A)</option>
+        </select>
+      </div>
+      <div class="searchbar">
+        <input type="text" name="search" placeholder="Search">
+        <%= image_pack_tag 'search-24px.svg'%>
+      </div>
+      <div class="downloadbar">
+        <div class="pdfdownload" class="d-flex align-items-center" role="button">
+          <%= image_pack_tag 'pdf.svg'%>
+          <a href="#">Download PDF</a>
+        </div>
+        <div class="xlsdownload" class="d-flex align-items-center" role="button">
+          <%= image_pack_tag 'xls.svg'%>
+          <a href="#">Download Excel</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="table-main">
+    <div class="container">
+      <table id="simple_table">
+        <thead> 
+          <tr>
+            <th>Network Name</th>
+            <th>Country</th>
+            <th class="d-flex align-items-center">
+              <span>Price</span> 
+              <div class="arrow-down">&#10094;</div>
+              <select>
+                <option value="USD">USD</option>
+                <option value="AED">AED</option>
+                <option value="Euros">Euros</option>
+              </select>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>AWCC (Afghan Wireless Communication Company)</td>
+            <td>Afghanistan</td>
+            <td>0.436209267</td>
+          </tr>
+
+          <tr>
+            <td>Afghan Telecom (SALAAM)</td>
+            <td>Afghanistan</td>
+            <td>0.407883983</td>
+          </tr>
+
+          <tr>
+            <td>Etisalat Afghanistan</td>
+            <td>Afghanistan</td>
+            <td>0.379558712</td>
+          </tr>
+
+          <tr>
+            <td>MTN Afghanistan</td>
+            <td>Afghanistan</td>
+            <td>0.362563552</td>
+          </tr>
+          <tr>
+            <td>ROSHAN (TDCA Ltd)</td>
+            <td>Afghanistan</td>
+            <td>0.447539378</td>
+          </tr>
+
+          <tr>
+            <td>Afghan Telecom (SALAAM)</td>
+            <td>Afghanistan</td>
+            <td>0.407883983</td>
+          </tr>
+
+          <tr style="border: none;">
+            <td>AWCC (Afghan Wireless Communication Company)</td>
+            <td>Afghanistan</td>
+            <td>0.436209267</td>
+          </tr>
+          <tr>
+            <td>AWCC (Afghan Wireless Communication Company)</td>
+            <td>Afghanistan</td>
+            <td>0.436209267</td>
+          </tr>
+
+          <tr>
+            <td>Afghan Telecom (SALAAM)</td>
+            <td>Afghanistan</td>
+            <td>0.407883983</td>
+          </tr>
+
+          <tr>
+            <td>Etisalat Afghanistan</td>
+            <td>Afghanistan</td>
+            <td>0.379558712</td>
+          </tr>
+
+          <tr>
+            <td>MTN Afghanistan</td>
+            <td>Afghanistan</td>
+            <td>0.362563552</td>
+          </tr>
+          <tr>
+            <td>ROSHAN (TDCA Ltd)</td>
+            <td>Afghanistan</td>
+            <td>0.447539378</td>
+          </tr>
+
+          <tr>
+            <td>Afghan Telecom (SALAAM)</td>
+            <td>Afghanistan</td>
+            <td>0.407883983</td>
+          </tr>
+
+          <tr style="border: none;">
+            <td>AWCC (Afghan Wireless Communication Company)</td>
+            <td>Afghanistan</td>
+            <td>0.436209267</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="table-page d-flex justify-content-end">
+        <p>Showing 1 out of 50</p>
+        <div class="d-flex align-items-center justify-content-between">
+          <button class="prevbutton">Prev</button>
+          <ul class="d-flex justify-content-between">
+            <li role="button">1</li>
+            <li role="button">2</li>
+            <li role="button">3</li>
+            <li role="button">4</li>
+            <li role="button">5</li>
+          </ul>
+          <button class="nextbutton">Next</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ <!--  
+  <div class="table-main">
+  <div class="container">
+    <table id="example" class="display" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th>Age</th>
+                <th>Start date</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+ 
+        <tfoot>
+            <tr>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th>Age</th>
+                <th>Start date</th>
+                <th>Salary</th>
+            </tr>
+        </tfoot>
+ 
+        <tbody>
+            <tr>
+                <td>Tiger Nixon</td>
+                <td>System Architect</td>
+                <td>Edinburgh</td>
+                <td>61</td>
+                <td>2011/04/25</td>
+                <td>$320,800</td>
+            </tr>
+            <tr>
+                <td>Garrett Winters</td>
+                <td>Accountant</td>
+                <td>Tokyo</td>
+                <td>63</td>
+                <td>2011/07/25</td>
+                <td>$170,750</td>
+            </tr>
+            <tr>
+                <td>Ashton Cox</td>
+                <td>Junior Technical Author</td>
+                <td>San Francisco</td>
+                <td>66</td>
+                <td>2009/01/12</td>
+                <td>$86,000</td>
+            </tr>
+            <tr>
+                <td>Cedric Kelly</td>
+                <td>Senior Javascript Developer</td>
+                <td>Edinburgh</td>
+                <td>22</td>
+                <td>2012/03/29</td>
+                <td>$433,060</td>
+            </tr>
+            <tr>
+                <td>Airi Satou</td>
+                <td>Accountant</td>
+                <td>Tokyo</td>
+                <td>33</td>
+                <td>2008/11/28</td>
+                <td>$162,700</td>
+            </tr>
+            <tr>
+                <td>Brielle Williamson</td>
+                <td>Integration Specialist</td>
+                <td>New York</td>
+                <td>61</td>
+                <td>2012/12/02</td>
+                <td>$372,000</td>
+            </tr>
+            <tr>
+                <td>Herrod Chandler</td>
+                <td>Sales Assistant</td>
+                <td>San Francisco</td>
+                <td>59</td>
+                <td>2012/08/06</td>
+                <td>$137,500</td>
+            </tr>
+            <tr>
+                <td>Rhona Davidson</td>
+                <td>Integration Specialist</td>
+                <td>Tokyo</td>
+                <td>55</td>
+                <td>2010/10/14</td>
+                <td>$327,900</td>
+            </tr>
+            <tr>
+                <td>Colleen Hurst</td>
+                <td>Javascript Developer</td>
+                <td>San Francisco</td>
+                <td>39</td>
+                <td>2009/09/15</td>
+                <td>$205,500</td>
+            </tr>
+            <tr>
+                <td>Sonya Frost</td>
+                <td>Software Engineer</td>
+                <td>Edinburgh</td>
+                <td>23</td>
+                <td>2008/12/13</td>
+                <td>$103,600</td>
+            </tr>
+            <tr>
+                <td>Jena Gaines</td>
+                <td>Office Manager</td>
+                <td>London</td>
+                <td>30</td>
+                <td>2008/12/19</td>
+                <td>$90,560</td>
+            </tr>
+            <tr>
+                <td>Quinn Flynn</td>
+                <td>Support Lead</td>
+                <td>Edinburgh</td>
+                <td>22</td>
+                <td>2013/03/03</td>
+                <td>$342,000</td>
+            </tr>
+            <tr>
+                <td>Charde Marshall</td>
+                <td>Regional Director</td>
+                <td>San Francisco</td>
+                <td>36</td>
+                <td>2008/10/16</td>
+                <td>$470,600</td>
+            </tr>
+            <tr>
+                <td>Haley Kennedy</td>
+                <td>Senior Marketing Designer</td>
+                <td>London</td>
+                <td>43</td>
+                <td>2012/12/18</td>
+                <td>$313,500</td>
+            </tr>
+            <tr>
+                <td>Tatyana Fitzpatrick</td>
+                <td>Regional Director</td>
+                <td>London</td>
+                <td>19</td>
+                <td>2010/03/17</td>
+                <td>$385,750</td>
+            </tr>
+            <tr>
+                <td>Michael Silva</td>
+                <td>Marketing Designer</td>
+                <td>London</td>
+                <td>66</td>
+                <td>2012/11/27</td>
+                <td>$198,500</td>
+            </tr>
+            <tr>
+                <td>Paul Byrd</td>
+                <td>Chief Financial Officer (CFO)</td>
+                <td>New York</td>
+                <td>64</td>
+                <td>2010/06/09</td>
+                <td>$725,000</td>
+            </tr>
+            <tr>
+                <td>Gloria Little</td>
+                <td>Systems Administrator</td>
+                <td>New York</td>
+                <td>59</td>
+                <td>2009/04/10</td>
+                <td>$237,500</td>
+            </tr>
+            <tr>
+                <td>Bradley Greer</td>
+                <td>Software Engineer</td>
+                <td>London</td>
+                <td>41</td>
+                <td>2012/10/13</td>
+                <td>$132,000</td>
+            </tr>
+            <tr>
+                <td>Dai Rios</td>
+                <td>Personnel Lead</td>
+                <td>Edinburgh</td>
+                <td>35</td>
+                <td>2012/09/26</td>
+                <td>$217,500</td>
+            </tr>
+            <tr>
+                <td>Jenette Caldwell</td>
+                <td>Development Lead</td>
+                <td>New York</td>
+                <td>30</td>
+                <td>2011/09/03</td>
+                <td>$345,000</td>
+            </tr>
+            <tr>
+                <td>Yuri Berry</td>
+                <td>Chief Marketing Officer (CMO)</td>
+                <td>New York</td>
+                <td>40</td>
+                <td>2009/06/25</td>
+                <td>$675,000</td>
+            </tr>
+            <tr>
+                <td>Caesar Vance</td>
+                <td>Pre-Sales Support</td>
+                <td>New York</td>
+                <td>21</td>
+                <td>2011/12/12</td>
+                <td>$106,450</td>
+            </tr>
+            <tr>
+                <td>Doris Wilder</td>
+                <td>Sales Assistant</td>
+                <td>Sidney</td>
+                <td>23</td>
+                <td>2010/09/20</td>
+                <td>$85,600</td>
+            </tr>
+            <tr>
+                <td>Angelica Ramos</td>
+                <td>Chief Executive Officer (CEO)</td>
+                <td>London</td>
+                <td>47</td>
+                <td>2009/10/09</td>
+                <td>$1,200,000</td>
+            </tr>
+            <tr>
+                <td>Gavin Joyce</td>
+                <td>Developer</td>
+                <td>Edinburgh</td>
+                <td>42</td>
+                <td>2010/12/22</td>
+                <td>$92,575</td>
+            </tr>
+            <tr>
+                <td>Jennifer Chang</td>
+                <td>Regional Director</td>
+                <td>Singapore</td>
+                <td>28</td>
+                <td>2010/11/14</td>
+                <td>$357,650</td>
+            </tr>
+            <tr>
+                <td>Brenden Wagner</td>
+                <td>Software Engineer</td>
+                <td>San Francisco</td>
+                <td>28</td>
+                <td>2011/06/07</td>
+                <td>$206,850</td>
+            </tr>
+            <tr>
+                <td>Fiona Green</td>
+                <td>Chief Operating Officer (COO)</td>
+                <td>San Francisco</td>
+                <td>48</td>
+                <td>2010/03/11</td>
+                <td>$850,000</td>
+            </tr>
+            <tr>
+                <td>Shou Itou</td>
+                <td>Regional Marketing</td>
+                <td>Tokyo</td>
+                <td>20</td>
+                <td>2011/08/14</td>
+                <td>$163,000</td>
+            </tr>
+            <tr>
+                <td>Michelle House</td>
+                <td>Integration Specialist</td>
+                <td>Sidney</td>
+                <td>37</td>
+                <td>2011/06/02</td>
+                <td>$95,400</td>
+            </tr>
+            <tr>
+                <td>Suki Burks</td>
+                <td>Developer</td>
+                <td>London</td>
+                <td>53</td>
+                <td>2009/10/22</td>
+                <td>$114,500</td>
+            </tr>
+            <tr>
+                <td>Prescott Bartlett</td>
+                <td>Technical Author</td>
+                <td>London</td>
+                <td>27</td>
+                <td>2011/05/07</td>
+                <td>$145,000</td>
+            </tr>
+            <tr>
+                <td>Gavin Cortez</td>
+                <td>Team Leader</td>
+                <td>San Francisco</td>
+                <td>22</td>
+                <td>2008/10/26</td>
+                <td>$235,500</td>
+            </tr>
+            <tr>
+                <td>Martena Mccray</td>
+                <td>Post-Sales support</td>
+                <td>Edinburgh</td>
+                <td>46</td>
+                <td>2011/03/09</td>
+                <td>$324,050</td>
+            </tr>
+            <tr>
+                <td>Unity Butler</td>
+                <td>Marketing Designer</td>
+                <td>San Francisco</td>
+                <td>47</td>
+                <td>2009/12/09</td>
+                <td>$85,675</td>
+            </tr>
+            <tr>
+                <td>Howard Hatfield</td>
+                <td>Office Manager</td>
+                <td>San Francisco</td>
+                <td>51</td>
+                <td>2008/12/16</td>
+                <td>$164,500</td>
+            </tr>
+            <tr>
+                <td>Hope Fuentes</td>
+                <td>Secretary</td>
+                <td>San Francisco</td>
+                <td>41</td>
+                <td>2010/02/12</td>
+                <td>$109,850</td>
+            </tr>
+            <tr>
+                <td>Vivian Harrell</td>
+                <td>Financial Controller</td>
+                <td>San Francisco</td>
+                <td>62</td>
+                <td>2009/02/14</td>
+                <td>$452,500</td>
+            </tr>
+            <tr>
+                <td>Timothy Mooney</td>
+                <td>Office Manager</td>
+                <td>London</td>
+                <td>37</td>
+                <td>2008/12/11</td>
+                <td>$136,200</td>
+            </tr>
+            <tr>
+                <td>Jackson Bradshaw</td>
+                <td>Director</td>
+                <td>New York</td>
+                <td>65</td>
+                <td>2008/09/26</td>
+                <td>$645,750</td>
+            </tr>
+            <tr>
+                <td>Olivia Liang</td>
+                <td>Support Engineer</td>
+                <td>Singapore</td>
+                <td>64</td>
+                <td>2011/02/03</td>
+                <td>$234,500</td>
+            </tr>
+            <tr>
+                <td>Bruno Nash</td>
+                <td>Software Engineer</td>
+                <td>London</td>
+                <td>38</td>
+                <td>2011/05/03</td>
+                <td>$163,500</td>
+            </tr>
+            <tr>
+                <td>Sakura Yamamoto</td>
+                <td>Support Engineer</td>
+                <td>Tokyo</td>
+                <td>37</td>
+                <td>2009/08/19</td>
+                <td>$139,575</td>
+            </tr>
+            <tr>
+                <td>Thor Walton</td>
+                <td>Developer</td>
+                <td>New York</td>
+                <td>61</td>
+                <td>2013/08/11</td>
+                <td>$98,540</td>
+            </tr>
+            <tr>
+                <td>Finn Camacho</td>
+                <td>Support Engineer</td>
+                <td>San Francisco</td>
+                <td>47</td>
+                <td>2009/07/07</td>
+                <td>$87,500</td>
+            </tr>
+            <tr>
+                <td>Serge Baldwin</td>
+                <td>Data Coordinator</td>
+                <td>Singapore</td>
+                <td>64</td>
+                <td>2012/04/09</td>
+                <td>$138,575</td>
+            </tr>
+            <tr>
+                <td>Zenaida Frank</td>
+                <td>Software Engineer</td>
+                <td>New York</td>
+                <td>63</td>
+                <td>2010/01/04</td>
+                <td>$125,250</td>
+            </tr>
+            <tr>
+                <td>Zorita Serrano</td>
+                <td>Software Engineer</td>
+                <td>San Francisco</td>
+                <td>56</td>
+                <td>2012/06/01</td>
+                <td>$115,000</td>
+            </tr>
+            <tr>
+                <td>Jennifer Acosta</td>
+                <td>Junior Javascript Developer</td>
+                <td>Edinburgh</td>
+                <td>43</td>
+                <td>2013/02/01</td>
+                <td>$75,650</td>
+            </tr>
+            <tr>
+                <td>Cara Stevens</td>
+                <td>Sales Assistant</td>
+                <td>New York</td>
+                <td>46</td>
+                <td>2011/12/06</td>
+                <td>$145,600</td>
+            </tr>
+            <tr>
+                <td>Hermione Butler</td>
+                <td>Regional Director</td>
+                <td>London</td>
+                <td>47</td>
+                <td>2011/03/21</td>
+                <td>$356,250</td>
+            </tr>
+            <tr>
+                <td>Lael Greer</td>
+                <td>Systems Administrator</td>
+                <td>London</td>
+                <td>21</td>
+                <td>2009/02/27</td>
+                <td>$103,500</td>
+            </tr>
+            <tr>
+                <td>Jonas Alexander</td>
+                <td>Developer</td>
+                <td>San Francisco</td>
+                <td>30</td>
+                <td>2010/07/14</td>
+                <td>$86,500</td>
+            </tr>
+            <tr>
+                <td>Shad Decker</td>
+                <td>Regional Director</td>
+                <td>Edinburgh</td>
+                <td>51</td>
+                <td>2008/11/13</td>
+                <td>$183,000</td>
+            </tr>
+            <tr>
+                <td>Michael Bruce</td>
+                <td>Javascript Developer</td>
+                <td>Singapore</td>
+                <td>29</td>
+                <td>2011/06/27</td>
+                <td>$183,000</td>
+            </tr>
+            <tr>
+                <td>Donna Snider</td>
+                <td>Customer Support</td>
+                <td>New York</td>
+                <td>27</td>
+                <td>2011/01/25</td>
+                <td>$112,000</td>
+            </tr>
+            <tr>
+                <td>Brock Lee</td>
+                <td>Customer Support</td>
+                <td>Tampa</td>
+                <td>27</td>
+                <td>2011/01/25</td>
+                <td>$112,000</td>
+            </tr>
+        </tbody>
+    </table>
+  </div>
+</div> -->
+  <%= render 'layouts/pricing_project_help' %>
+</section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>  
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.6/jspdf.plugin.autotable.min.js"></script> -->
+<link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css"></style>
+<script type="text/javascript" src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
+<!-- <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> -->
+
+<script type="text/javascript">
+
+  $(document).ready(function() {
+      $('#example').DataTable( {
+          responsive: true,
+          "pageLength": 10
+      } );
+  } );
+//---------------------------------------  
+    /*  $('.pdfdownload').click( function() {
+      let doc = new jsPDF('p', 'pt', 'letter');  
+        let htmlstring = '';  
+        let tempVarToCheckPageHeight = 0;  
+        let pageHeight = 0;  
+        pageHeight = doc.internal.pageSize.height;  
+        specialElementHandlers = {  
+            '#bypassme': function(element, renderer) {  
+                return true  
+            }  
+        };  
+        margins = {  
+            top: 150,  
+            bottom: 60,  
+            left: 40,  
+            right: 40,  
+            width: 600  
+        };  
+        let y = 20;  
+        doc.setLineWidth(2);  
+        doc.text(200, y = y + 30, "TOTAL MARKS OF STUDENTS");  
+        doc.autoTable({  
+            html: '#simple_table',  
+            startY: 70,  
+            theme: 'grid',  
+            columnStyles: {  
+                0: {  
+                    cellWidth: 180,  
+                },  
+                1: {  
+                    cellWidth: 180,  
+                },      
+                2: {  
+                    cellWidth: 180,  
+                }  
+            },  
+            styles: {  
+                minCellHeight: 40  
+            }  
+        })  
+        doc.save('Table.pdf');
+      });
+      $('.xlsdownload').click( function() {
+        let rows = [];
+        for ( let i = 0, row ; row = $('table')[0].rows[i] ; i++ ) {
+          column1 = row.cells[0].innerText;
+            column2 = row.cells[1].innerText;
+            column3 = row.cells[2].innerText;
+            if (i == 0) {
+              column3 = $('table')[0].rows[0].cells[2].children[0].innerText;  
+            }
+            rows.push(
+              [
+                column1,
+                column2,
+                column3
+              ]
+            );
+        }
+        csvContent = "data:text/csv;charset=utf-8,";
+        rows.forEach(function(rowArray){
+              row = rowArray.join(",");
+              csvContent += row + "\r\n";
+          });
+        let encodedUri = encodeURI(csvContent);
+          let link = document.createElement("a");
+          link.setAttribute("href",  encodedUri);
+          link.setAttribute("download", "Table.csv");
+          document.body.appendChild(link);
+          link.click();
+      });*/
+//-----------------------------
+
+      $(".prevbutton").click(function(){
+        pagenumber--;
+        if (pagenumber < 0) return;
+        $(".table-page ul li:eq(0)").html(pagenumber * 5 + 1)
+        $(".table-page ul li:eq(1)").html(pagenumber * 5 + 2)
+        $(".table-page ul li:eq(2)").html(pagenumber * 5 + 3)
+        $(".table-page ul li:eq(3)").html(pagenumber * 5 + 4)
+        $(".table-page ul li:eq(4)").html(pagenumber * 5 + 5)
+        if (pagenumber == 0) {
+          $(this).css({'display': 'none', 'visibility': 'hidden'})
+        }
+        if (pagenumber == 8) {
+          $(".nextbutton").removeAttr('disabled');
+        }
+      });
+      $(".nextbutton").click(function(){
+        pagenumber++;
+        $(".table-page ul li:eq(0)").html(pagenumber * 5 + 1)
+        $(".table-page ul li:eq(1)").html(pagenumber * 5 + 2)
+        $(".table-page ul li:eq(2)").html(pagenumber * 5 + 3)
+        $(".table-page ul li:eq(3)").html(pagenumber * 5 + 4)
+        $(".table-page ul li:eq(4)").html(pagenumber * 5 + 5)
+        if (pagenumber == 1) {
+          $(".prevbutton").css({'display': 'block', 'visibility': 'visible'})
+        }
+        if (pagenumber == 9) {
+          $(this).attr('disabled','disabled');
+        }
+      });
+      $(".logo").click(function() {
+        document.documentElement.scrollTop = 0;
+      });
+</script>

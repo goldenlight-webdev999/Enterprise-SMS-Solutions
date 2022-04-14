@@ -1,0 +1,68 @@
+<nav>
+  <div class="container d-flex justify-content-between align-items-center">
+    <div class="mt-2">
+      <%= link_to root_path do %>
+        <%= image_pack_tag "Logo.svg", alt: "Rivet Logo"%>
+      <%end%>
+    </div>
+    <span>
+    <div class="list" id="navlist">
+      <ul class="align-items-center">
+        <li data-turbolinks="false" class="<%= is_active_page('home', 'index')%>"><%= link_to "Home", root_path %></li>
+        <!-- <li data-turbolinks="false" class="<%= is_active_page('home', 'sms_api')%>"><%= link_to "SMS API",  sms_api_path%></li>
+        <li data-turbolinks="false" class="<%= is_active_page('home', 'two_way_sms')%>"><%= link_to "Two-Way SMS", two_way_sms_path%></li>
+        <li data-turbolinks="false" class="<%= is_active_page('home', 'pricing')%>"><%= link_to "Pricing", pricing_path%></li>
+ -->
+
+        <div class="dropdown">
+          <li class="dropdown-toggle" data-bs-toggle="dropdown" id="dropdownMenuButton1" aria-expanded="true">
+            <span clas="sr-only">Services</span>
+            <span class="caret"></span>
+          </li>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuButton1">
+
+            <li class= "dropdown-item"><%= link_to "SMS API",  sms_api_path%></li>
+            <li class= "dropdown-item"><%= link_to "2-Way SMS", two_way_sms_path%></li>
+            <li class= "dropdown-item"><%= link_to "Pricing", pricing_path%></li>
+          </ul>
+        </div> 
+        <% if user_signed_in? %>
+          <li data-turbolinks="false" class="<%= is_active_page('home', 'whatsapp_api')%>"><%= link_to "WhatsApp-API", whatsapp_api_path%></li>
+        <% else %>
+        <li data-turbolinks="false" class="<%= is_active_page('home', 'whatsapp_api')%>"><%= link_to "WhatsApp-API", whatsapp_page_path%></li>
+        <% end %>
+
+         
+
+        <!-- <li><a href="#">Bulk SMS Marketing</a></li>
+        <li><a href="#">FAQs</a></li> -->
+        <li data-turbolinks="false" class="<%= is_active_page('home', 'contact')%>"><%= link_to "Contact", contact_path%></li>
+
+       <!--  <li data-turbolinks="false" class="<%= is_active_page('home', 'contact')%>">
+          <% if user_signed_in? %>
+            <p>Welcome &nbsp<strong><%= current_user.email%></strong> |
+            <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'login-button' %></p> 
+            
+          <% else %>
+              <%= link_to "Register", new_user_registration_path, :class =>"register-button" %> |
+              <%= link_to "Log In", new_user_session_path, :class => 'login-button'  %>
+          <% end %>
+        </li> -->
+
+        <li data-turbolinks="false" class="<%= is_active_page('home', 'contact')%>">
+          <a href="https://smpplive.com/" target="_blank">LOGIN</a>
+        </li>
+
+        <!-- <li role="button"><a href="https://smpplive.com/" target="_blank"><i class="login-button"></i></a></li> -->
+       
+
+        
+      </ul>
+      
+    </div>
+    </span>
+    <button class="navbar-toggle">
+      <%= image_pack_tag "menu-24px.svg", alt: ""%>
+    </button>
+  </div>
+</nav>

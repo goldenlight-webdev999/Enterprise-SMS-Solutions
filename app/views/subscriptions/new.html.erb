@@ -1,0 +1,374 @@
+<%- content_for :custom_css, 'credit_amount' %>
+<!-- <section>
+<h1>New subscription</h1>
+
+<form action="/subscription" method="post" id="subscription">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="hidden" name="submission[stripe_payment_id]" id="payment">
+
+  <div class="field">
+    <label for="title">Title</label>
+    <input type="text" name="submission[title]" id="title" value="Test Submission">
+  </div>
+
+  <div class="field">
+    <label for="Email">Email</label>
+    <input type="text" name="submission[email]" id="email">
+  </div>
+
+
+  <div class="field">
+    <div id="card"></divsubscription  </div>
+
+  <div class="field">
+    <label for="Card Number">Card Number</label>
+    <div id="cardnum" class="field is-empty" name="card number"></div>
+  </div>
+  
+  <div class="field">
+    <label for="Card Expiration">Card Expiration</label>
+    <div id="cardexp" class="field is-empty" placeholder="MM/YY"></div>
+  </div>
+
+  <div>
+ 		<label for="Card CVC">Card CVC</label>
+    <div id="cardcvc" class="field is-empty" name="cvc" style="width:100px;"></div>
+  </div>
+
+  <input type="submit" value="Create Submission">
+</form>
+</section> -->
+<section>
+	
+	<div class="container">
+			<div class="payment-billing">
+
+					<form action="/subscriptions" method="post" id="new_subscription">
+					  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+					  <input type="hidden" name="submission[stripe_payment_id]" id="payment">
+					  <input type="hidden" name="submission[title]" id="title" value="Subscription payment Whatsapp Business API">
+					  <input type="hidden" name="submission[status]" id="paymentstatus">
+					  <input type="hidden" name="submission[price]" id='price' value=30000 >
+					  <input type="hidden" name="submission[uuid]" id='uuid' value= "<%=SecureRandom.uuid %>" >
+					  <input type="hidden" name="submission[subscription_id]" id='subscription_id'>
+					  <%= hidden_field_tag 'customer_id' %>
+					  <%= hidden_field_tag 'email' %>
+					  
+						<div class="title-container">
+							<p class="main-title">Please Confirm Payment and Billing Details</p>
+						</div>
+						<div class="payment-billing-details">
+							<div class="details-container details-container-left">
+								<div class="detail-title">
+									Payment Details
+								</div>
+								<div class="detail-form">
+			
+           				 	<div id="card-errors" style="color:red;"></div>
+           				
+									<div>
+										<label><span>*</span>Name on card</label>
+										<input id="nameoncard" type="text" name="cc_name" required maxlength="45" />
+									</div>
+									<div class="credit-number">
+										<label for="Card Number"><span>*</span>Card Number</label>
+    								<div id="cardnum" class="form-control col-lg-4" required style='height: 2.4em; margin-bottom: 15px; padding-top: .7em;' name="card number"></div>
+  								</div>
+									<div>
+										<label for="Card Expiration"><span>*</span>Card Expiration </label>
+    								<div id="cardexp" class="form-control" placeholder="MM/YY" required style='height: 2.4em; margin-bottom: 15px;padding-top: .7em;'></div>
+									
+										<label for="Card CVC"><span>*</span>Card CVC</label>
+										<div id="cardcvc" class="form-control" name="cvc" required style="margin-bottom: 15px; height: 2.4em; padding-top: .7em;"></div>
+  								</div>
+  								<span></span>
+									<div class="checkboxbar">
+										<input type="checkbox" name="save">
+										<label>Save my card info</label>
+									</div>
+									<!-- <div class="detail-form-footer-txt">
+										Only VISA and MasterCard are accepted
+									</div> -->
+								</div>
+							</div>
+							<div class="details-container">
+								<div class="detail-title">
+									Billing Details
+								</div>
+								<div class="detail-form">
+									<div>
+										<label><span>*</span>Name</label>
+										<input type="text" name="name" required maxlength="45" />
+									</div>
+									<div>
+										<label><span>*</span>Phone Number</label>
+										 <input id="phone" type="tel" name="phone" required />
+										
+									</div>
+									<div>
+										<label><span>*</span>Address</label>
+										<input type="text" name="address" required maxlength="45" />
+									</div>
+									<div class="city-country">
+										<div class="city-input">
+											<label><span>*</span>City</label>
+											<input type="text" name="city" required maxlength="45" />
+										</div>
+										<div class="country-input">
+											<label><span>*</span>Country</label>
+											<input type="text" name="country" required maxlength="45" />
+										</div>	
+									</div>
+									<div class="state-postcode">
+										<div class="state-input">
+											<label><span>*</span>State</label>
+											<input type="text" name="state" required maxlength="45" />
+										</div>
+										<div class="postcode-input">
+											<label><span>*</span>Postcode</label>
+											<input type="text" name="postcode" required maxlength="45" />
+										</div>	
+									</div>
+									<div class="checkboxbar">
+										<input type="checkbox" name="save">
+										<label>Save my billing info</label>
+									</div>
+								</div>
+							</div>
+							
+						</div>
+						<div class="purchase-button">
+							<button type="submit" disabled>Confirm Purchase of USD <span id="sms-value">300</span></button>
+						</div>
+					</form>
+				</div>
+		</div>
+</section>
+
+
+
+<script charset="utf-8">
+  var stripe = Stripe('<%= ENV["PUBLISHABLE_KEY"] %>');
+    // load the fonts in
+  var fonts = [{
+    cssSrc: "https://fonts.googleapis.com/css?family=Karla",
+  }];
+
+  $('.payment-billing form input').on('input', function() {
+	  				$('.purchase-button button').removeAttr('disabled');
+	  				let j = 0;
+	  				for ( let i = 0; i < $('.payment-billing form input').length ; i++ ) {
+	  					if ( $('.payment-billing form input')[i].value.length == 0 || $('.payment-billing form input')[i].value == 'on' ) j++;
+	  					if (j == $('.payment-billing form input').length) {
+	  						$('.purchase-button button').attr('disabled', 'true');
+	  					}
+	  				}
+  				})
+
+  // styles for the stripe inputs
+  var styles = {
+    base: {
+      iconColor: "#cccccc",
+      color: "#000000",
+      fontFamily: "MonumentGroteskTrial-Regular",
+      fontSize: "16px",
+      borderRadius: '8px',
+      spacingUnit: '4px',
+      border: '1px solid #E0E6EB',
+
+      "::placeholder": {
+        color: "#ccc"
+      },
+      ":-webkit-autofill": {
+        color: "#ccc"
+      }
+    },
+    invalid: {
+      iconColor: "#FFC7EE",
+      color: "#A31621"
+    }
+  }
+
+	  var elements = stripe.elements();
+	  //var cardElement = elements.create('card', {style: styles});
+  	  //cardElement.mount('#card');
+
+  	const CardNumberElement = elements.create('cardNumber',{showIcon:true,iconStyle:'solid',style: styles});
+    CardNumberElement.mount('#cardnum');
+
+    const CardExpiryElement = elements.create('cardExpiry',{showIcon:true,iconStyle:'solid',disabled:true,style: styles});
+    CardExpiryElement.mount('#cardexp');
+
+    const CardCvcElement=elements.create('cardCvc',{showIcon:true,iconStyle:'solid',disabled:true,style: styles});
+    CardCvcElement.mount('#cardcvc');
+    
+    CardNumberElement.on('change',(e) => {
+    	showCardError(e);
+        if(e.complete){
+            CardExpiryElement.update({disabled:false})
+            CardExpiryElement.focus()
+
+        }
+     })
+    CardExpiryElement.on('change',(e) =>  {
+    	showCardError(e);
+        if(e.complete){
+            CardCvcElement.update({disabled:false})
+            CardCvcElement.focus()
+
+        }
+    })
+
+    CardCvcElement.on('change',(e) =>  {
+    	showCardError(e);
+        
+    })
+
+    function showCardError(event) {
+		  let displayError = document.getElementById('card-errors');
+		  if (event.error) {
+		    displayError.textContent = event.error.message;
+		  } else {
+		    displayError.textContent = '';
+		  }
+		}
+
+	
+		
+    let priceId = '<%= ENV["price"] %>';
+
+    const form = document.querySelector('#new_subscription');
+    form.addEventListener('submit', function(e) {
+	    e.preventDefault();
+
+	    const result = stripe.createPaymentMethod({
+			      type: 'card',
+			      card: CardNumberElement,
+			      billing_details: {
+			        name: document.getElementById('nameoncard').value,
+			        // email: document.getElementById('email').value,
+			      },
+			    })
+	    		.then((result) => {
+			      if (result.error) {
+			        displayError(result);
+			      } else {
+
+				    // Step 1: POST request to create customer and subscription
+				    fetch('/payment_methods', {
+				      method: 'POST',
+				      headers: {
+				        'Content-Type': 'application/json',
+				      },
+				      body: JSON.stringify({
+				        authenticity_token: '<%= form_authenticity_token %>',
+				        // email: document.getElementById('email').value,
+				        name: document.getElementById('nameoncard').value,
+				        paymentmethod: result.paymentMethod.id,
+				      }),
+				    })
+				    .then((response) => response.json())
+				    .then((paymentIntent) => {
+				    	if(paymentIntent.status === 'requires_action'){
+				    		 // Step 2: Create payment method and confirm payment intent.
+						      stripe.confirmCardPayment(
+						        paymentIntent.client_secret, 
+						      ).then((resp) => {
+						        if(resp.error) {
+						        	alert("Payment unsuccessful",resp.error.message)
+						          //alert(resp.error.message);
+						          console.log('There was an issue');
+						          console.log(resp.error);
+						        } else {
+						        	console.log('You got the money');
+						        	console.log(paymentIntent);
+						        	// Step 3: Embed payment ID in form
+							          const paymentIdInput = document.querySelector('#payment');
+							          paymentIdInput.value = paymentIntent.id;
+							          const paymentStatus = document.querySelector('#paymentstatus');
+							          paymentStatus.value = "succeeded";               //      paymentIntent.status;
+
+							          document.getElementById("customer_id").value = paymentIntent.customer_id;
+							          document.getElementById("subscription_id").value = paymentIntent.subscription_id;
+							          document.getElementById("email").value = paymentIntent.email;
+							          form.submit();
+						        }
+				    			});
+						    } else {
+						    	console.log('You got the money no action');
+						    	console.log(paymentIntent);
+						    	console.log(result.paymentMethod.id);
+
+						    	// Step 3: Embed payment ID in form
+						          const paymentIdInput = document.querySelector('#payment');
+						          paymentIdInput.value = result.paymentMethod.id
+						          const paymentStatus = document.querySelector('#paymentstatus');
+						          paymentStatus.value = paymentIntent.status;
+
+						          document.getElementById("customer_id").value = paymentIntent.customer_id;
+						          document.getElementById("subscription_id").value = paymentIntent.subscription_id;
+						          document.getElementById("email").value = paymentIntent.email;
+						          form.submit();
+						    }  	
+				      
+				      })
+				    .catch((error) => {
+				    	alert("Payment unsuccessful, try again with valid card!");
+				      console.error('Error:', error);
+				    });
+				 }
+			});	 
+	 	 });
+//Not used right now.
+      function createSubscription({ customerId, paymentMethodId, priceId }) {
+		  return (
+		    fetch('/create_subscriptions', {
+		      method: 'post',
+		      headers: {
+		        'Content-type': 'application/json',
+		      },
+		      body: JSON.stringify({
+		        customerId: customerId,
+		        paymentMethodId: paymentMethodId,
+		        priceId: priceId,
+		      }),
+		    })
+		      .then((response) => {
+		        return response.json();
+		      })
+		      // If the card is declined, display an error to the user.
+		      .then((result) => {
+		        if (result.error) {
+		          // The card had an error when trying to attach it to a customer.
+		          throw result;
+		        }
+		        return result;
+		      })
+		      // Normalize the result to contain the object returned by Stripe.
+		      // Add the additional details we need.
+		      .then((result) => {
+		        return {
+		          paymentMethodId: paymentMethodId,
+		          priceId: priceId,
+		          subscription: result,
+		        };
+		      })
+		      // Some payment methods require a customer to be on session
+		      // to complete the payment process. Check the status of the
+		      // payment intent to handle these actions.
+		      .then(handlePaymentThatRequiresCustomerAction)
+		      // If attaching this card to a Customer object succeeds,
+		      // but attempts to charge the customer fail, you
+		      // get a requires_payment_method error.
+		      .then(handleRequiresPaymentMethod)
+		      // No more actions required. Provision your service for the user.
+		      .then(onSubscriptionComplete)
+		      .catch((error) => {
+		        // An error has happened. Display the failure to the user here.
+		        // We utilize the HTML element we created.
+		        showCardError(error);
+		      })
+		  );
+		}
+
+</script>
